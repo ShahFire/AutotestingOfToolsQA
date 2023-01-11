@@ -1,55 +1,71 @@
 package tests;
 
-import commonElements.LeftPanelElement;
+import interfaces.PageAdInterface;
 import io.qameta.allure.Step;
-import pages.AutomationPracticeFormPage;
-import pages.MainPage;
-import pages.PracticeFormPage;
+import org.junit.jupiter.api.Test;
 
-public class FormsPracticeFormTest {
-    static String emperorJpg = "C://EmperorOfMankind.jpg";
+public class FormsPracticeFormTest extends BaseTest{
+    @Test
+    public void FormsPracticeFormTest() {
+        step1();
+        step2();
+        step3();
+        step4();
+        step5();
+        step6();
+        step7();
+        step8();
+        //step9();    Раскомментировать только в том случае, если файл EmperorOfMankind.jpg был добавлен по пути "C:\"
+        step10();
+        step11();
+        step12();
+        step13();
+        step14();
+    }
+
+    private String emperorJpg = "C://EmperorOfMankind.jpg";
     @Step("1. Нажать на категорию \"Forms\" на главной странице, а после нажать на элемент \"Practice Form\" в открывшейся левой панели элементов")
-    public static void step1(){
-        MainPage.FormsClick();
-        LeftPanelElement.PracticeFormLiClick();
+    public void step1(){
+        mainPage.FormsClick();
+        leftPanelFrame.PracticeFormLiClick();
     }
     @Step("2. Ввести значение \"Артур\" в поле \"First Name\", а также значение \"Хушвахтович\" в поле \"Last Name\" ")
-    public static void step2(){
-        PracticeFormPage.FirstNameInput("Артур");
-        PracticeFormPage.LastNameInput("Хушвахтович");
+    public void step2(){
+        practiceFormPage.FirstNameInput("Артур");
+        practiceFormPage.LastNameInput("Хушвахтович");
     }
     @Step("3. Ввести значение \"shah-fire@mail.ru\" в поле \"Email\" ")
-    public static void step3(){PracticeFormPage.UserEmailInput("shah-fire@mail.ru");}
+    public void step3(){practiceFormPage.UserEmailInput("shah-fire@mail.ru");}
     @Step("4. Нажать на ярлык \"Male\"")
-    public static void step4(){
-        PracticeFormPage.GenderOtherClick();
-        PracticeFormPage.GenderFemaleClick();
-        PracticeFormPage.GenderMaleClick();
+    public void step4(){
+        practiceFormPage.GenderOtherClick();
+        practiceFormPage.GenderFemaleClick();
+        practiceFormPage.GenderMaleClick();
     }
     @Step("5. Ввести значение \"9103742831\" в поле \"Mobile\"")
-    public static void step5(){PracticeFormPage.UserNumberInput("9103742831");}
+    public void step5(){practiceFormPage.UserNumberInput("9103742831");}
     @Step("6. Ввести значение \"05 Jan 2003\" в поле \"Date of Birth\"")
-    public static void step6(){PracticeFormPage.DateOfBirthInput("05 Jan 2003");}
+    public void step6(){practiceFormPage.DateOfBirthInput("05 Jan 2003");}
     @Step("7. Ввести значение \"Social Studies\" в поле \"Subjects\"")
-    public static void step7(){PracticeFormPage.SubjectsInput("Social Studies");}
+    public void step7(){practiceFormPage.SubjectsInput("Social Studies");}
     @Step("8. Нажать на ярлыки \"Sports\", \"Reading\" и \"Music\"")
-    public static void step8(){
-        PracticeFormPage.HobbiesCheckbox1Click();
-        PracticeFormPage.HobbiesCheckbox2Click();
-        PracticeFormPage.HobbiesCheckbox3Click();
+    public void step8(){
+        practiceFormPage.HobbiesCheckbox1Click();
+        practiceFormPage.HobbiesCheckbox2Click();
+        practiceFormPage.HobbiesCheckbox3Click();
     }
     @Step("9. Вставить файл \"EmperorOfMankind.jpg\" в поле для ввода файлов \"uploadPicture\"")
-    public static void step9(){
-        PracticeFormPage.UploadPicture(emperorJpg);
+    public void step9(){
+        practiceFormPage.UploadPicture(emperorJpg);
     }
     @Step("10. Ввести значение \"147 Lenin Street\" в текстовую область \"Current Address\" ")
-    public static void step10(){PracticeFormPage.AddressInput("147 Lenin Street");}
+    public void step10(){practiceFormPage.AddressInput("147 Lenin Street");}
     @Step("11. Ввести значение \"NCR\" в поле \"Select State\"")
-    public static void step11(){PracticeFormPage.StateSelectInput("NCR");}
+    public void step11(){practiceFormPage.StateSelectInput("NCR");}
     @Step("12. Ввести значение \"Noida\" в поле \"Select City\"")
-    public static void step12(){PracticeFormPage.CitySelectInput("Noida");}
+    public void step12(){practiceFormPage.CitySelectInput("Noida");}
     @Step("13. Нажать на кнопку \"Submit\"")
-    public static void step13(){PracticeFormPage.SubmitBtnClick();}
+    public void step13(){practiceFormPage.SubmitBtnClick();}
     @Step("14. Нажать на кнопку \"Close\"")
-    public static void step14(){AutomationPracticeFormPage.closeLargeModalBtnClick();}
+    public void step14(){automationPracticeFormFrame.closeLargeModalBtnClick();}
 }
