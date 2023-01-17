@@ -27,13 +27,13 @@ import static com.codeborne.selenide.Selenide.open;
  */
 
 public class BaseTest implements PageAdInterface {
-    private String urlSite = "https://demoqa.com";
+   private String urlSite = "https://demoqa.com";
 
     @BeforeEach
     protected void Start() {
         WebDriverManager.chromedriver().setup();
         Configuration.browser = "chrome";
-        Configuration.browserSize = "1920x1080";
+        Configuration.browserSize = "820x1280";
         open(urlSite);
     }
 }

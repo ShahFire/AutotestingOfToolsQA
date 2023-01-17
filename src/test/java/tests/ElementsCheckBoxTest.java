@@ -4,7 +4,7 @@ import interfaces.PageAdInterface;
 import io.qameta.allure.Step;
 import org.junit.jupiter.api.Test;
 
-public class ElementsCheckBoxTest extends BaseTest implements PageAdInterface {
+public class ElementsCheckBoxTest extends BaseTest{
     @Test
     public void ElementsTextBoxTest() {
         step1();
